@@ -18,10 +18,10 @@
 
 ### Steps to run the project
 
-#####First Method 
+##### First Method 
 * Run the "run.sh" file using command "./run.sh < input_file_path >"
 
-#####Second Method
+##### Second Method
 * Open terminal
 * Go to project directory (POM file diretory)
 * Build project with maven command : mvn clean install
