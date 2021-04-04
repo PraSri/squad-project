@@ -6,6 +6,10 @@ import java.util.Map;
 import com.squad.parkinglot.exception.ParkingException;
 import com.squad.parkinglot.service.ParkingService;
 
+/**
+ * Singleton Factory class for getting implementations for respective commands
+ * from user/file
+ */
 public class CommandFactory implements ICommand {
 
 	private Map<String, ICommand> commandMap;

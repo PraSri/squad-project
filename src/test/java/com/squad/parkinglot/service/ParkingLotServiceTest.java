@@ -2,8 +2,6 @@ package com.squad.parkinglot.service;
 
 import static org.junit.Assert.assertTrue;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.List;
 
 import org.junit.Before;
@@ -20,11 +18,11 @@ public class ParkingLotServiceTest {
 	@Before
 	public void setup() throws ParkingException {
 		parkingService = new ParkingServiceImpl();
-		parkingService.createParkingLot(2);
 	}
 
 	@Test
 	public void testStatusParkingLot() throws ParkingException {
+		parkingService.createParkingLot(2);
 		int park1 = parkingService.park(new Car("test1", "1")).get();
 		int park2 = parkingService.park(new Car("test2", "2")).get();
 		List<String> regList = parkingService.getAllRegistrationNo("1");
@@ -34,12 +32,9 @@ public class ParkingLotServiceTest {
 		assertTrue(parkingService.getSlotNo("test1") == 1);
 		assertTrue(regList.get(0).equals("test1"));
 		assertTrue(slotList.get(0) == 1);
-		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-		System.setOut(new PrintStream(outContent));
 		parkingService.leave(1);
-		String expectedMessage = "Slot number 1 vacated, the car with vehicle registration number test1 left the space, the driver of the car was of age 1";
-		assertTrue(expectedMessage.equalsIgnoreCase(outContent.toString().trim()));
-		System.setOut(null);
+		slotList = parkingService.getAllSlotNo("1");
+		assertTrue(slotList.isEmpty());
 	}
 
 }

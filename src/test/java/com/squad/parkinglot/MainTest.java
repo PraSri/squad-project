@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
@@ -25,13 +24,13 @@ public class MainTest {
 		String outputPathExpected = dir + "\\" + "output.txt";
 		String outputPathActual = dir + "\\" + "out.txt";
 		String[] args = new String[] { inputPath };
-		PrintStream fileOut = new PrintStream("./out.txt");
-		System.setOut(fileOut);
+//		PrintStream fileOut = new PrintStream("./out.txt");
+//		System.setOut(fileOut);
 		Main.main(args);
 		File firstFile = new File(outputPathExpected);
 		File secondFile = new File(outputPathActual);
 		assertTrue(isEqual(firstFile.toPath(), secondFile.toPath()));
-		System.setOut(null);
+//		System.setOut(null);
 	}
 
 	private static boolean isEqual(Path firstFile, Path secondFile) {

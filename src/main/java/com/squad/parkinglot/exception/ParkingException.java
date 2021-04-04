@@ -3,7 +3,7 @@ package com.squad.parkinglot.exception;
 public class ParkingException extends Exception {
 
 	/**
-	 * 
+	 * Class to handle exception for parking lot application and print message
 	 */
 	private static final long serialVersionUID = 1L;
 

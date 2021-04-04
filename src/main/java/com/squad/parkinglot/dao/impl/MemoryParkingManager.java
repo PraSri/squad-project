@@ -13,9 +13,10 @@ import com.squad.parkinglot.strategy.NearestFirstParkingStrategy;
 import com.squad.parkinglot.strategy.ParkingStrategy;
 
 /**
+ * In memory parking lot data manager class
+ * 
  * @author Prakhar
  * 
- *  In memory parking lot data manager singleton class
  *
  */
 public class MemoryParkingManager<T extends Vehicle> implements ParkingLotDao<T> {
@@ -26,22 +27,7 @@ public class MemoryParkingManager<T extends Vehicle> implements ParkingLotDao<T>
 
 	private Map<Integer, Optional<T>> slotVehicleMap = null;
 
-	private static MemoryParkingManager instance = null;
-
-	public static <T extends Vehicle> MemoryParkingManager<T> getInstance(int capacity,
-			ParkingStrategy parkingStrategy) {
-
-		if (instance == null) {
-			synchronized (MemoryParkingManager.class) {
-				if (instance == null) {
-					instance = new MemoryParkingManager<T>(capacity, parkingStrategy);
-				}
-			}
-		}
-		return instance;
-	}
-
-	private MemoryParkingManager(int capacity, ParkingStrategy parkingStrategy) {
+	public MemoryParkingManager(int capacity, ParkingStrategy parkingStrategy) {
 		this.capacity = capacity;
 		this.availability = this.capacity;
 		this.parkingStrategy = parkingStrategy;
@@ -68,7 +54,6 @@ public class MemoryParkingManager<T extends Vehicle> implements ParkingLotDao<T>
 			parkingStrategy.removeSlot(availableSlot);
 			availability--;
 		}
-		System.out.println(availableSlot);
 		return availableSlot;
 	}
 

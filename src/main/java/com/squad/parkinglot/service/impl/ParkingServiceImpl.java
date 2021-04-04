@@ -16,6 +16,8 @@ import com.squad.parkinglot.service.ParkingService;
 import com.squad.parkinglot.strategy.NearestFirstParkingStrategy;
 
 /**
+ * Service implementation of parking lot, having main business logic
+ * 
  * @author Prakhar
  *
  */
@@ -30,7 +32,7 @@ public class ParkingServiceImpl implements ParkingService {
 			throw new ParkingException("Parking Lot Already exist!");
 		}
 
-		parkingLotDao = MemoryParkingManager.getInstance(capacity, new NearestFirstParkingStrategy());
+		parkingLotDao = new MemoryParkingManager<Vehicle>(capacity, new NearestFirstParkingStrategy());
 
 		System.out.println("Created parking of " + capacity + " slots");
 
@@ -134,10 +136,10 @@ public class ParkingServiceImpl implements ParkingService {
 		try {
 			if (statusMap.get(slotNo).isPresent())
 				return parkingLotDao.getStatus().get(slotNo).get();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			throw new ParkingException("No vehicle is present on slot number " + slotNo);
 		}
-		
+
 		throw new ParkingException("No vehicle is present on slot number " + slotNo);
 	}
 

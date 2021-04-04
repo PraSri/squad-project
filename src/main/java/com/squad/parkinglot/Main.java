@@ -32,7 +32,6 @@ public class Main {
 					while ((input = bufferReader.readLine()) != null) {
 						input = input.trim();
 						if (input.length() > 0) {
-//							System.out.println("Input file path provided : " + input);
 							String[] cmd = input.split(" ");
 							try {
 								CommandFactory.getInstance().executeCommand(cmd, parkingService);
@@ -45,7 +44,6 @@ public class Main {
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
-					System.out.println(e.getMessage());
 				}
 				break;
 			}

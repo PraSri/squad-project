@@ -5,7 +5,7 @@ package com.squad.parkinglot.strategy;
 
 /**
  * @author Prakhar
- *
+ * 
  */
 public interface ParkingStrategy {
 

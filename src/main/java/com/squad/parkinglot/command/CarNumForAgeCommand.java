@@ -36,8 +36,6 @@ public class CarNumForAgeCommand implements ICommand {
 	@Override
 	public void executeCommand(String[] cmd, ParkingService parkingService) throws ParkingException {
 
-//		Vehicle_registration_number_for_driver_of_age 18
-
 		if (cmd.length < 2 || cmd[1] == null) {
 			throw new ParkingException("Bad command ...please check the entered command!");
 		} else {

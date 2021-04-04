@@ -3,6 +3,8 @@ package com.squad.parkinglot.strategy;
 import java.util.TreeSet;
 
 /**
+ * Implementation of parking strategy which gives nearest empty slot
+ * 
  * @author Prakhar
  *
  */
