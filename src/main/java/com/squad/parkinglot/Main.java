@@ -12,7 +12,6 @@ import com.squad.parkinglot.command.CommandFactory;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("********** SQUAD PARKING LOT *********");
 		BufferedReader bufferReader = null;
 		ParkingService parkingService = null;
 		String input = null;

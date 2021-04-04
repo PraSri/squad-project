@@ -9,28 +9,24 @@ import java.util.TreeSet;
 
 public class NearestFirstParkingStrategy implements ParkingStrategy {
 
-private TreeSet<Integer> slots;
-	
-	public NearestFirstParkingStrategy()
-	{
+	private TreeSet<Integer> slots;
+
+	public NearestFirstParkingStrategy() {
 		slots = new TreeSet<Integer>();
 	}
-	
+
 	@Override
-	public void add(int i)
-	{
+	public void add(int i) {
 		slots.add(i);
 	}
-	
+
 	@Override
-	public int getSlot()
-	{
+	public int getSlot() {
 		return slots.first();
 	}
-	
+
 	@Override
-	public void removeSlot(int availableSlot)
-	{
+	public void removeSlot(int availableSlot) {
 		slots.remove(availableSlot);
 	}
 

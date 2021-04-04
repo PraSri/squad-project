@@ -42,7 +42,7 @@ public class CarNumForAgeCommand implements ICommand {
 			throw new ParkingException("Bad command ...please check the entered command!");
 		} else {
 			List<String> response = parkingService.getAllRegistrationNo(cmd[1]);
-			System.out.println(response);
+			System.out.println(response.toString().replace("[", "").replace("]", "").replaceAll("\\s", ""));
 		}
 
 	}

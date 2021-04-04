@@ -1,0 +1,12 @@
+Created parking of 6 slots
+Space not available, capacity is full!
+Space not available, capacity is full!
+
+Space not available, capacity is full!
+BadCommand Exception due to ==>No slot for vehicle of registrationNo PB-01-HH-1234 is available!
+BadCommand Exception due to ==>Invalid slot number : cause is No vehicle is present on slot number 2
+Space not available, capacity is full!
+
+Created parking of 2 slots
+Space not available, capacity is full!
+Space not available, capacity is full!

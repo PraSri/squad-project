@@ -68,6 +68,7 @@ public class MemoryParkingManager<T extends Vehicle> implements ParkingLotDao<T>
 			parkingStrategy.removeSlot(availableSlot);
 			availability--;
 		}
+		System.out.println(availableSlot);
 		return availableSlot;
 	}
 

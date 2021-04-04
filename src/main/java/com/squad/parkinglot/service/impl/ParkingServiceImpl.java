@@ -21,7 +21,7 @@ import com.squad.parkinglot.strategy.NearestFirstParkingStrategy;
  */
 public class ParkingServiceImpl implements ParkingService {
 
-	ParkingLotDao<Vehicle> parkingLotDao = null;
+	private ParkingLotDao<Vehicle> parkingLotDao = null;
 
 	@Override
 	public void createParkingLot(int capacity) throws ParkingException {
